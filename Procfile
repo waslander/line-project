@@ -1,1 +1,1 @@
-web: python app:assignment2.py
+web: python assignment2.py
