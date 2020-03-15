@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 import os
 import sys
 import redis
-import pandas as pd
 
 from argparse import ArgumentParser
 
@@ -78,15 +77,12 @@ def callback():
 
 # Handler function for Text Message
 def handle_TextMessage(event):
-    input_text = event.message.text
-    
-    if input_text == 'Hong Kong'
-        df = pd.read_csv ("http://www.chp.gov.hk/files/misc/latest_situation_of_reported_cases_wuhan_eng.csv")
-        
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=df)
-         )    
+    print(event.message.text)
+    msg = 'You said: "' + event.message.text + '" '
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(msg)
+    )
 
 # Handler function for Sticker Message
 def handle_StickerMessage(event):
